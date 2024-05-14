@@ -7,12 +7,8 @@ public class Logger {
         return "[ " + java.time.LocalDateTime.now().toString() + " ] " + o.toString();
     }
     public static void error(Exception e) {
-        StackTraceElement[] rawTrace = e.getStackTrace();
-        String trace = e.toString();
-        for (StackTraceElement s : rawTrace) {
-            trace += "\t" + s.getFileName() + ": " + s.getLineNumber() + ", " + s.getMethodName() + System.lineSeparator();
-        }
-        System.err.println(formatLog(trace));
+        log(e);
+        e.printStackTrace();
     }
     public static void showError(Exception e) {
         error(e);
