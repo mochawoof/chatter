@@ -9,7 +9,7 @@ public class Main {
             UIManager.setLookAndFeel("com.formdev.flatlaf.FlatDarkLaf");
             SwingUtilities.updateComponentTreeUI(frame);
         } catch (Exception e) {
-            ErrorHandler.log(e);
+            Logger.error(e);
         }
         
         frame.setTitle(TITLE);
